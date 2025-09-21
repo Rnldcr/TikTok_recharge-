@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Coin Recharge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span class="logo-text">TikTok</span>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <h1 class="section-title">Get Coins</h1>
+                <button class="section-subtitle" id="viewTransactions">View transactions</button>
+            </div>
+            
+            <input type="text" class="username-input" placeholder="Enter Username" id="username">
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--accent-color);">Recharge:</h2>
+                <p class="section-subtitle">Save up to 15% compared to in-app purchase</p>
+            </div>
+
+            <div class="packages-grid" id="packagesGrid">
+                <!-- Packages will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h3 class="section-title">Payment method</h3>
+                <div class="payment-methods">
+                    <div class="payment-method visa">VISA</div>
+                    <div class="payment-method mastercard">MC</div>
+                    <div class="payment-method amex">AMX</div>
+                    <div class="payment-method paypal">PP</div>
+                </div>
+            </div>
+            
+            <div class="payment-card">
+                <div class="payment-details">
+                    <span class="payment-label">Card number</span>
+                    <span class="payment-value">****</span>
+                </div>
+                <div class="payment-details">
+                    <span class="payment-label">Expiry date</span>
+                    <span class="payment-value">MM/YY</span>
+                </div>
+            </div>
+
+            <button class="recharge-btn" id="rechargeBtn">Recharge</button>
+        </div>
+    </div>
+
+    <div class="theme-toggle" id="themeToggle">🌙</div>
+
+    <!-- Processing Screen -->
+    <div class="processing-screen" id="processingScreen" style="display: none;">
+        <div class="status-icon">
+            <div class="processing-icon"></div>
+        </div>
+        <h2 class="screen-title">Processing your payment</h2>
+        <p class="screen-message">This could take a few seconds</p>
+        <div class="timer" id="timer">05:00</div>
+    </div>
+
+    <!-- Success Screen -->
+    <div class="success-screen" id="successScreen" style="display: none;">
+        <div class="status-icon">
+            <div class="success-icon">✓</div>
+        </div>
+        <h2 class="screen-title">Payment completed</h2>
+        <p class="screen-message" id="successMessage">You recharged 7,000,000,000 Coins. You can use them to send virtual Gifts.</p>
+        <div class="receipt-options">
+            <button class="receipt-btn" id="showReceiptBtn">Show Receipt</button>
+            <button class="back-btn" id="backBtn">Go Back</button>
+        </div>
+    </div>
+
+    <!-- Transactions History Modal -->
+    <div class="modal" id="transactionsModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Transaction History</h2>
+                <span class="close-btn" id="closeTransactions">&times;</span>
+            </div>
+            <div class="modal-body" id="transactionsList">
+                <!-- Transaction items will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div class="modal" id="receiptModal" style="display: none;">
+        <div class="modal-content receipt-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Payment Receipt</h2>
+                <span class="close-btn" id="closeReceipt">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="receipt-content" id="receiptContent">
+                    <!-- Receipt details will be inserted here -->
+                </div>
+                <div class="receipt-actions">
+                    <button class="download-btn" id="downloadReceipt">Download Receipt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
